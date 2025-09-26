@@ -35,10 +35,10 @@ user_id = user["id"]
 playlist_name = "Entire Top50"
 
 # 時間範囲の例： short_term / medium_term / long_term
-time_ranges = ["long_term""]  # 必要なら ["short_term","medium_term","long_term"] に拡張
+time_ranges = ["long_term"]  # 必要なら ["short_term","medium_term","long_term"] に拡張
 
 # ここでは short_term を使って上書き。あなたの既存ロジックに差し替えてください。
-top_tracks = sp.current_user_top_tracks(limit=50, time_range="long_term"")
+top_tracks = sp.current_user_top_tracks(limit=50, time_range="long_term")
 track_uris = [t["uri"] for t in top_tracks["items"]]
 
 # プレイリスト検索
