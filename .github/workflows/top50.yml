@@ -31,5 +31,3 @@ jobs:
           SPOTIPY_REDIRECT_URI: ${{ secrets.SPOTIPY_REDIRECT_URI }}
         run: |
           python top50_4weeks.py
-          python top50_6months.py
-          python top50_entire.py
