@@ -8,7 +8,7 @@ CLIENT_SECRET = os.environ["SPOTIPY_CLIENT_SECRET"]
 REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI", "http://127.0.0.1:8000/callback")
 REFRESH_TOKEN = os.environ["SPOTIPY_REFRESH_TOKEN"]
 
-SCOPE = "playlist-modify-public playlist-read-private"
+SCOPE = "playlist-modify-private playlist-read-private"
 
 # 非対話で refresh_token を使って認証
 sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
