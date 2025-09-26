@@ -5,7 +5,7 @@ from spotipy.oauth2 import SpotifyOAuth
 # 認証情報を環境変数から取得
 CLIENT_ID = os.environ["SPOTIPY_CLIENT_ID"]
 CLIENT_SECRET = os.environ["SPOTIPY_CLIENT_SECRET"]
-REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI", "http://localhost:8888/callback")
+REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI", "http://127.0.0.1:8000/callback")
 REFRESH_TOKEN = os.environ["SPOTIPY_REFRESH_TOKEN"]
 
 SCOPE = "playlist-modify-public playlist-read-private"
