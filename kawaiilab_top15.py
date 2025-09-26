@@ -17,10 +17,10 @@ token_info = sp_oauth.refresh_access_token(REFRESH_TOKEN)
 sp = Spotify(auth=token_info["access_token"])
 
 # --- 上位20曲を抽出したいプレイリスト ---
-source_playlist_id = "https://open.spotify.com/playlist/07kXPcjIqWw5DUT4Ybsdod?si=1c40037b7ad84e47"  # 置き換え
-target_playlist_id = "https://open.spotify.com/playlist/1anCYH7pLqOzgW7F53Kn0M?si=cefc6607fdb94ef1"  # 置き換え
+source_playlist_id = "07kXPcjIqWw5DUT4Ybsdod"  # 置き換え
+target_playlist_id = "1anCYH7pLqOzgW7F53Kn0M"  # 置き換え
 
-# 1. 上位20曲取得
+# 1. 上位15曲取得
 results = sp.playlist_items(source_playlist_id, limit=15)
 track_uris = [item["track"]["uri"] for item in results["items"]]
 
