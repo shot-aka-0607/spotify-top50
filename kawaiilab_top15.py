@@ -20,12 +20,12 @@ sp = Spotify(auth=token_info["access_token"])
 source_playlist_id = "07kXPcjIqWw5DUT4Ybsdod"  # 置き換え
 target_playlist_id = "1anCYH7pLqOzgW7F53Kn0M"  # 置き換え
 
-# 1. 上位15曲取得
-results = sp.playlist_items(source_playlist_id, limit=15)
+# 1. 上位20曲取得
+results = sp.playlist_items(source_playlist_id, limit=20)
 track_uris = [item["track"]["uri"] for item in results["items"]]
 
 # 2. 別プレイリストに上書き
 sp.playlist_replace_items(target_playlist_id, track_uris)
 
-print(f"プレイリスト「KAWAII LAB. Top15」を更新しました（{len(track_uris)}曲）")
+print(f"プレイリスト「KAWAII LAB. Top20」を更新しました（{len(track_uris)}曲）")
 
