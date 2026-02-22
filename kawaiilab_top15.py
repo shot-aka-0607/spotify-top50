@@ -16,16 +16,16 @@ sp_oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
 token_info = sp_oauth.refresh_access_token(REFRESH_TOKEN)
 sp = Spotify(auth=token_info["access_token"])
 
-# --- 上位20曲を抽出したいプレイリスト ---
+# --- 上位30曲を抽出したいプレイリスト ---
 source_playlist_id = "07kXPcjIqWw5DUT4Ybsdod"  # 置き換え
 target_playlist_id = "1anCYH7pLqOzgW7F53Kn0M"  # 置き換え
 
-# 1. 上位20曲取得
-results = sp.playlist_items(source_playlist_id, limit=20)
+# 1. 上位30曲取得
+results = sp.playlist_items(source_playlist_id, limit=30)
 track_uris = [item["track"]["uri"] for item in results["items"]]
 
 # 2. 別プレイリストに上書き
 sp.playlist_replace_items(target_playlist_id, track_uris)
 
-print(f"プレイリスト「KAWAII LAB. Top20」を更新しました（{len(track_uris)}曲）")
+print(f"プレイリスト「KAWAII LAB. Top30」を更新しました（{len(track_uris)}曲）")
 
