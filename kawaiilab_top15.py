@@ -28,4 +28,3 @@ track_uris = [item["track"]["uri"] for item in results["items"]]
 sp.playlist_replace_items(target_playlist_id, track_uris)
 
 print(f"プレイリスト「KAWAII LAB. Top30」を更新しました（{len(track_uris)}曲）")
-
