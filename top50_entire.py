@@ -5,7 +5,6 @@ from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 import logging
 
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
