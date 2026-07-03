@@ -2,6 +2,7 @@ import os
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 
+
 # 認証情報を環境変数から取得
 CLIENT_ID = os.environ["SPOTIPY_CLIENT_ID"]
 CLIENT_SECRET = os.environ["SPOTIPY_CLIENT_SECRET"]
