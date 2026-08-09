@@ -23,15 +23,11 @@ target_playlist_id = "1anCYH7pLqOzgW7F53Kn0M"  # 置き換え
 
 # 1. 上位30曲取得
 results = sp.playlist_items(source_playlist_id, limit=30)
-
-# 修正：item["track"] が存在し、かつ "uri" があるものだけを安全に抽出する
-track_uris = [
-    item["track"]["uri"] 
-    for item in results["items"] 
-    if item and item.get("track") and item["track"].get("uri")
-]
+track_uris = [item["track"]["uri"] for item in results["items"]]
 
 # 2. 別プレイリストに上書き
 sp.playlist_replace_items(target_playlist_id, track_uris)
 
-print(f"プレイリスト「KAWAII LAB. Top30」を更新しました（{len(track_uris)}曲）")
+print(f"プレイリスト「KAWAII LAB. Top30」を更新しました（{len(track_uris)}曲）") 
+
+
